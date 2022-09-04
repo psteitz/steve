@@ -1,7 +1,7 @@
 # CSV Interface for stv
 cstv.py runs stv based on votes in an input csv file.
-* Expected format of the input csv is rows for voters, cols for candidates
-* First col must be named 'voter'
+* Expected format of the input csv is rows for voters, colums for candidates
+* First column must be named 'voter'
 * Other column headers are candidate names and must be unique
 * Row headers (voter values) must be unique
 * Each row must contain a sequence of rank values starting at 1
