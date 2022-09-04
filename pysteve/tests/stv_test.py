@@ -1,5 +1,4 @@
 
-from operator import le
 import sys
 import os.path
 import random
@@ -11,12 +10,13 @@ from lib.plugins import stv
 
 letters = ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
 
+caps = ["AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK"]
+
 def random_vote(length, bin_selector, weights):
     ret = ""
     letters_available = letters[:]
     for i in range(length):
-        print(len(letters_available), "letters available")
-        #bin = int(rand / delta)
+        # print(len(letters_available), "letters available")
         bin = bin_selector(letters_available, weights)
         letter = letters_available[bin]
         ret = ret + letter
@@ -74,15 +74,17 @@ issue['candidates'] = candidate_list
 #
 # Generate identical votes, all ordering the candidates as they appear
 # in the list so bob is everyone's first choice, etc.
-num_voters = 100
+num_voters = 8
 votes = {}
 for i in range(num_voters):
     votes[str(i)] = "abcde"
+print("Uniform preference election results")
+#summary, winners = stv.tallySTV(votes, issue, 2)
+#print(summary, winners)
 #
 # Probably orrect behavior but should be documented or if possible fixed.
 #
 # Uniform random votes
-# [x for x in fruits if "a" in x]
 votes = {}
 for i in range(num_voters):
     votes[str(i)] = random_vote(5, select_uniform, None)
@@ -91,7 +93,7 @@ print("Random election results")
 summary, winners = stv.tallySTV(votes, issue, 2)
 print(summary, winners)
 
-
+#
 # 10,9, ..., 1 weights for candidates
 wt = {}
 for i in range(10):
@@ -100,7 +102,7 @@ votes = {}
 for i in range(num_voters):
     votes[str(i)] = random_vote(5, select_ballot_order, wt)
 
-print("Random election results")
+print("weighted election results")
 summary, winners = stv.tallySTV(votes, issue, 2)
 print(summary, winners)
 
