@@ -1,4 +1,4 @@
-CSV Interface for pysteve
+# CSV Interface for pysteve
 cstv.py runs stv based on votes in an input csv file.
 * Expected format of the input csv is rows for voters, cols for candidates
 * First col must be named 'voter'
