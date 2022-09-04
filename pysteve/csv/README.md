@@ -1,4 +1,4 @@
-# CSV Interface for pysteve
+# CSV Interface for stv
 cstv.py runs stv based on votes in an input csv file.
 * Expected format of the input csv is rows for voters, cols for candidates
 * First col must be named 'voter'
@@ -15,3 +15,5 @@ and num-winners parses to an int that is the number of winners to select.
 is a sample input file.  It is set up for an election where
 voters have 5 votes each from among 10 candidates.  In this example,
 all voters submit full ballots.
+
+cstv.py uses the stv implementation in ../lib/plugins/stv.py
