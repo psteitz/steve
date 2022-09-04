@@ -13,5 +13,5 @@ and num-winners parses to an int that is the number of winners to select.
 
 [votes.csv](https://github.com/psteitz/steve/blob/trunk/pysteve/csv/votes.csv)
 is a sample input file.  It is set up for an election where
-voters have 5 votes each and 5 winners are selected.  In this example,
+voters have 5 votes each from among 10 candidates.  In this example,
 all voters submit full ballots.
