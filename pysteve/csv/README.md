@@ -3,7 +3,7 @@ cstv.py runs stv based on votes in an input csv file.
 * Expected format of the input csv is rows for voters, colums for candidates
 * First column must be named 'voter'
 * Other column headers are candidate names and must be unique
-* Row headers ('voter' field values) must be unique
+* Row headers ('voter' column values) must be unique
 * Each row must contain a sequence of rank values starting at 1
 * There can be no gaps in the ranks and no repeated ranks
 
