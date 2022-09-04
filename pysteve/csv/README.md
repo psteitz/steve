@@ -6,6 +6,8 @@ cstv.py runs stv based on votes in an input csv file.
 * Row headers ('voter' column values) must be unique
 * Each row must contain a sequence of rank values starting at 1
 * There can be no gaps in the ranks and no repeated ranks
+* Rows that fail validation are dropped (so those votes don't count)
+* If there are multiple votes for the same voter in the file, only the last one counts.
 
 Command line: ```python cstv.py -f vote-file-path -n num-winners```
 where vote-file-path is relative path to the input csv file

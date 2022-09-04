@@ -68,6 +68,8 @@ def run(num_winners, votes_path):
         voter = record['voter']
         voters.append(voter)
         raw_votes[voter] = {}
+        # note that if this is a duplicate vote for this voter the effect is to
+        # over-write the previous vote.
 
         for candidate in record:
             if candidate != "voter":  # skip name
